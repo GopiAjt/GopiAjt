@@ -2,7 +2,7 @@
 
 I am a passionate B.Tech CS student at MMEC, driven by a curiosity for technology and a love for writing Code. My journey involves delving into the world of computer science, exploring new ideas, and sharing my insights with the community.
 
-![<GopiAjt>'s Stats](https://github-readme-stats.vercel.app/api?username=<username>&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
+![<GopiAjt>'s Stats](https://github-readme-stats.vercel.app/api?username=<GopiAjt>&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
 
 ## 🚀 About Me
 
