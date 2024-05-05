@@ -1,6 +1,6 @@
 # Hi, I'm Gopi 👋
 
-I am a passionate B.Tech CS student at MMEC, driven by a curiosity for technology and a love for writing Code. My journey involves delving into the world of computer science, exploring new ideas, and sharing my insights with the community.
+I am a passionate BE CS student from MMEC, driven by a curiosity for technology and a love for writing Code. My journey involves delving into the world of computer science, exploring new ideas, and sharing my insights with the community.
 
 
 ## 🚀 About Me
@@ -10,12 +10,6 @@ I am a passionate B.Tech CS student at MMEC, driven by a curiosity for technolog
 - 🌐 
 - ✍️ 
 
-## My Articles
-- [JavaScript Engine and Runtime Explained](https://www.freecodecamp.org/news/javascript-engine-and-runtime-explained/)
-
-
-## Tech Stack
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
 
 ## 🌱 Currently Exploring
 
@@ -26,15 +20,18 @@ I am a passionate B.Tech CS student at MMEC, driven by a curiosity for technolog
   - Building server-side applications with SpringBoot, a powerful Java web framework.
   - Diving into MySQL for efficient and scalable database management.
 
- ## 🏆 Achievements
+ ## 🏆 Currently Workinng on
 
-- 🌟 Completed Hacktoberfest 2023 - Contributed to open source projects and celebrated the spirit of collaboration.
+- 🌟 [CaptureNoww.in](https://capture-now-in.vercel.app/) a web application enabling users to explore and book photographers.
+       
 
 
 ## 📬 Get in Touch
 
-- Connect with me on [Twitter](https://twitter.com/introvertedbot)
-- Read more of my articles on [theenthusiast.dev](https://theenthusiast.dev)
+- [Linkedin](https://www.linkedin.com/in/gopi-ajt/)
+- [Twitter](https://twitter.com/Gopi_Ajt)
+- [Instagram](https://www.instagram.com/gopi_ajt/)
+- [YouTube](https://www.youtube.com/@TRiSH_AjT)
 
 Thanks for stopping by! Let's connect and explore the fascinating world of technology together. 🚀
 
