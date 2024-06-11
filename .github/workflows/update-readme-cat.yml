@@ -3,7 +3,7 @@ name: Update README with Random Cat Image
 on:
   # Schedule: Consider adjusting the frequency
   schedule:
-    - cron: '0 * * * *'  # Runs every hour (optional)
+    - cron: '*/1 * * * *'  # Runs every hour (optional)
 
 jobs:
   update-readme:
