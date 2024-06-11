@@ -1,32 +1,43 @@
 name: Update README with Random Cat Image
 
 on:
-  # Run the workflow every minute
+  # Schedule: Consider adjusting the frequency
   schedule:
-    - cron: '*/1 * * * *'
-  # Allows manual triggering
-  workflow_dispatch:
+    - cron: '0 * * * *'  # Runs every hour (optional)
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3  # Checkout repository code
 
-      - name: Fetch Current Time
-        id: time
-        run: echo "::set-output name=time::$(date +%s)"
-
-      - name: Update README with Random Cat Image
+      - name: Fetch Random Cat Image URL
         run: |
-          TIME=${{ steps.time.outputs.time }}
-          sed -i "s|!\[Random Cat\](https://cataas.com/cat/says/hello?time=.*)|![Random Cat](https://cataas.com/cat/says/hello?time=${TIME})|" README.md
+          cat_url=$(curl https://cataas.com/cat/says/hello | jq -r '.url')
+          echo "Random Cat Image URL: $cat_url"  # For logging purposes (optional)
 
-      - name: Commit Changes
+      - name: Download Cat Image
+        uses: actions/download-artifact@v3  # Download image
+        with:
+          name: cat-image  # Update name as needed (optional)
+          path: .
+
+      - name: Download Image Using cURL (alternative)
         run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git add README.md
-          git commit -m 'Update README with new random cat image'
-          git push
+          curl -o cat-image.jpg $CAT_URL  # Download using cURL (requires CAT_URL variable)
+
+      - name: Update README with Image Link
+        uses: josantonius/github-action-markdown-formatter@v2  # Update README content
+        with:
+          content: |
+            # Update this section with your desired location in the README
+            ## Random Cat of the Day
+
+            ![Random Cat]($CAT_URL)
+
+      - name: Commit and Push Changes (using a personal access token)
+        uses: ad-action/github-push@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main  # Update branch as needed
+          message: "Update README with Random Cat Image"
