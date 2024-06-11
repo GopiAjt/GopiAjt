@@ -1,0 +1,32 @@
+name: Update README with Random Cat Image
+
+on:
+  # Run the workflow hourly
+  schedule:
+    - cron: '0 * * * *'
+  # Allows manual triggering
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Fetch Current Time
+        id: time
+        run: echo "::set-output name=time::$(date +%s)"
+
+      - name: Update README with Random Cat Image
+        run: |
+          TIME=${{ steps.time.outputs.time }}
+          sed -i "s|!\[Random Cat\](https://cataas.com/cat/says/hello?time=.*)|![Random Cat](https://cataas.com/cat/says/hello?time=${TIME})|" README.md
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m 'Update README with new random cat image'
+          git push
