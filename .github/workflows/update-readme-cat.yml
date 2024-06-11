@@ -3,7 +3,7 @@ name: Update README with Random Cat Image
 on:
   # Run the workflow hourly
   schedule:
-    - cron: '0 * * * *'
+    - cron: '*/1 * * * *'
   # Allows manual triggering
   workflow_dispatch:
 
