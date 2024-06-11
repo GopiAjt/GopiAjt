@@ -3,7 +3,7 @@ name: Update README with Random Cat Image
 on:
   # Schedule: Consider adjusting the frequency
   schedule:
-    - cron: '0 * * * *'  # Runs every hour (optional)
+    - cron: '*/1 * * * *'  # Runs every hour (optional)
 
 jobs:
   update-readme:
@@ -11,20 +11,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3  # Checkout repository code
 
-      - name: Fetch Random Cat Image URL
-        run: |
-          cat_url=$(curl https://cataas.com/cat/says/hello | jq -r '.url')
-          echo "Random Cat Image URL: $cat_url"  # For logging purposes (optional)
-
-      - name: Download Cat Image
-        uses: actions/download-artifact@v3  # Download image
+      - uses: actions/setup-node@v3
         with:
-          name: cat-image  # Update name as needed (optional)
-          path: .
+          node-version: 20  # Set Node.js version to 20
 
-      - name: Download Image Using cURL (alternative)
+      - name: Install Dependencies (if applicable)
+        run: npm install  # Install dependencies from package.json (optional)
+
+      - name: Download Random Cat Image using Node.js
         run: |
-          curl -o cat-image.jpg $CAT_URL  # Download using cURL (requires CAT_URL variable)
+          node download-cat-image.js  # Replace with your script name
+          echo "Downloaded cat image: $CAT_IMAGE_URL"  # For logging purposes (optional)
 
       - name: Update README with Image Link
         uses: josantonius/github-action-markdown-formatter@v2  # Update README content
@@ -33,7 +30,7 @@ jobs:
             # Update this section with your desired location in the README
             ## Random Cat of the Day
 
-            ![Random Cat]($CAT_URL)
+            ![Random Cat]($CAT_IMAGE_URL)
 
       - name: Commit and Push Changes (using a personal access token)
         uses: ad-action/github-push@v4
@@ -41,3 +38,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           branch: main  # Update branch as needed
           message: "Update README with Random Cat Image"
+
+# Define your Node.js script (save as download-cat-image.js)
