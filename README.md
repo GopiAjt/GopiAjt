@@ -1,5 +1,5 @@
 # Hi, I'm Gopi 👋
-![Random Cat](https://cataas.com/cat/says/hello?time=initial)
+![Random Cat](https://cataas.com/cat/says/hello)
 
 I am a passionate BE CS student from MMEC, driven by a curiosity for technology and a love for writing Code. My journey involves delving into the world of computer science, exploring new ideas, and sharing my insights with the community.
 
