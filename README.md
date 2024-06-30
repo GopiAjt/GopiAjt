@@ -3,21 +3,12 @@
 
 I am a passionate BE CS student from MMEC, driven by a curiosity for technology and a love for writing Code. My journey involves delving into the world of computer science, exploring new ideas, and sharing my insights with the community.
 
-
-## 🚀 About Me
-
-- 🔭 I'm currently working to build a startup
-- 📝 
-- 🌐 
-- ✍️ 
-
-
 ## 🌱 Currently Exploring
 
 - 🚀 Learning Full Stack Web Development
-  - Exploring the ins and outs of React and Redux for dynamic front-end experiences.
-  - Navigating through the world of React Router for seamless page transitions.
-  - Styling with Tailwind CSS to create modern and responsive user interfaces.
+  - Exploring the ins and outs of Vue.js and PrimeUI for dynamic front-end experiences.
+  - Navigating through the world of Vue Router for seamless page transitions.
+  - Styling with PrimeUI to create modern and responsive user interfaces.
   - Building server-side applications with SpringBoot, a powerful Java web framework.
   - Diving into MySQL for efficient and scalable database management.
 
